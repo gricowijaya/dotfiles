@@ -1,2 +1,3 @@
 # Terminal-Configuration-
-Terminal Configuration 
+Personal Terminal Configuration 
+gricowijaya
