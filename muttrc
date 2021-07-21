@@ -1,0 +1,22 @@
+# credentials setting the incoming mail through imap for gricowijaya@gmail.com
+set folder = "imaps://gricowijaya@gmail.com@imap.gmail.com:993"
+
+# setting for sending the mail throught the smtp server for gricowijaya@gmail.com port STARTSSL
+set smtp_url = "smtp://gricowijaya@gmail.com@smtp.gmail.com:587"
+
+
+set from = "gricowijaya@gmail.com"
+set realname = "Gede Rico Wijaya"
+# setting the inbox
+set spoolfile = "+INBOX"
+# setting the record of sent mail from gricowijaya@gmail.com
+set record = "+Sent"
+# setting the record of deleted mail from gricowwijaya@gmail.com
+set trash = "+Trash"
+# setting the record of drafted mail from gricowijaya@gmail.com
+set postponed = "+Drafts"
+
+
+mailboxes =INBOX =Sent =Trash =Drafts =Junk =Others
+
+source color.muttrc
