@@ -2,12 +2,10 @@ bluetooth (yea.. obviously Bluetooth)
 bpytop (Monitoring)
 rofi (program searcher)
 lazygit (CLI git)
-dmenu (deleted)
 firefox (Web browser)
 Network Manager 
 X11
 xfce with the goodies (might be deleted soon) (Desktop Environment)
-lxdm (greeter)
 pulseaudio 
 i3 all packlxfeages (Window Manager)
 nvim (text editor the best one)
@@ -48,4 +46,33 @@ ccls (LSP for c,cpp,c#), cmake (not working may delete soon)
 clangd (LSP for c,cpp,c#) somehow it's just works..... 
 radare2 (Debugger for C)
 Exiftools (Meta Data)
+procyon (encoder for java)
+GIMP
+GoldenDict
+w3m
+stegseek
+Kotlin 
+gradle
+stegsolve
+zsteg
+wireshark-cli (need config)
+wireshark-qt (need config)
+sonic-visualiser
+compton/picom
+nerd fonts/
+powertop
+net-tools (network configuration app in terminal)
+latex(All packages)
+abiword(PDF to Latex)
+Screenkey
+#GreenRecorder
+#VLC
+openbsd-netcat
+twmnd (notifications, to get a notifications from discord etc)
+binwalk(binary for forensics)
+wget 
+dunst (notification)
+ethtool --for not    
+vmware (virtual machine)
+
 

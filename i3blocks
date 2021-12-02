@@ -1,0 +1,48 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[documentation]
+full_text=Documentation
+website=https://vivien.github.io/i3blocks
+command=xdg-open "$website"
+color=#f12711
+
+[greetings]
+color=#f5af19
+command=echo "Hello, $USER!"
+interval=once
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
+
+[simple]
+full_text=This is a looong white on red text
+short_text=Short white on red text
+background=#FF0000
+color=#FFFFFF
+
+# Block with a fixed width
+[aligned]
+full_text=Here.
+min_width=100
+align=center
+
+# Fancy text with multiple colors and shapes
+[funky]
+full_text=<span foreground="red" size="x-large">Roses</span> and <i><span color="#EE37B8">violets</span></i>!
+markup=pango
+
+# Print seconds since 1970-01-01
+[epoch]
+command=date +%s
+interval=1
