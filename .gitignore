@@ -3,3 +3,5 @@
 .bash_logout
 nvim/autoload
 polybar/minimal-colors.txt
+picom/picom.backup
+ranger/__pycache__
