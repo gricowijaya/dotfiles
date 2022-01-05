@@ -1,0 +1,25 @@
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+
+alias v='nvim'
+alias r='ranger'
+alias lg='lazygit'
+alias n='neofetch'
+
+if [[ -z $DISPLAY ]] && ! [[ -e /tmp/.X11-unix/X0 ]] && (( EUID )); then
+  exec startx
+fi
+
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
+PS1='[\u@\h \W]\$ '
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
