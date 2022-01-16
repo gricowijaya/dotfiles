@@ -3,6 +3,7 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
+
 #
 
 # i3 config file (v4)
@@ -10,9 +11,6 @@
 # Please see https://i3wm.org/docs/usergblacuide.html for a complete reference!
 
 set $mod Mod4
-# bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/menu_mpd
-# bindsym $mod+space exec --no-startup-id ~/.config/rofi/bin/launcher_text
-# bindsym $mod+p exec --no-startup-id ~/.config/rofi/bin/applet_backlight
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -20,7 +18,8 @@ set $mod Mod4
 #font : Terminess (TTF) Bold Nerd Font Complete Mono 12
 
 # polybar
-exec --no-startup-id /home/gricowijaya/.config/polybar/launch.sh
+exec_always --no-startup-id /home/gricowijaya/.config/polybar/launch.sh
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 11
@@ -39,8 +38,23 @@ exec --no-startup-id nm-applet
 # Enable Floating Window
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [class="ranger"] floating enable
-for_window [class="rxvt-unicode"] floating enable
+for_window [title="ranger - urxvt"] floating enable
+for_window [title="tty-clock - urxvt"] floating enable
+for_window [class="Urxvt"] floating enable
+for_window [title="video0 - mpv"] floating enable
+for_window [title="video0 - mpv"] sticky enable
+
+#resize gaps
+bindsym $mod+z gaps outer current plus 5
+bindsym $mod+Shift+z gaps outer current minus 5
+
+#toggle cam using bash-sripts
+bindsym $mod+Shift+m exec i3-sensible-terminal -e bash scripts/bash-scripts/camtoggle & >> /dev/null
+
+
+# for tty-clock
+bindsym $mod+Shift+c exec i3-sensible-terminal -e 
+
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -57,13 +71,14 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # exec --no-startup-id feh --bg-scale /home/gricowijaya/Downloads/Wallpaper/red_cliff.jpg
 # exec --no-startup-id feh --bg-scale /home/gricowijaya/Programs/i3animated/scripts/nature/nature000.png
 # exec --no-startup-id feh --bg-scale /home/gricowijaya/Pictures/Wallpaper/i_am_root.jpg
-# exec --no-startup-id feh --bg-scale /home/gricowijaya/Pictures/Wallpaper/mountain8bit.jpg
+# exec --no-startup-id feh --bg-scale /home/gricowijaya/Pictures/Wallpaper/png/i3wm.png
 
 # set animated wallpaper
 # exec --no-startup-id /home/gricowijaya/Programs/i3animated/scripts/loop_pngs.sh /home/gricowijaya/Programs/i3animated/scripts/fighting 0.1 
 
 # exec picom automatically
 exec --no-startup-id picom --experimental-backends 
+bindsym $mod+y exec i3-sensible-terminal -e  nohup picom --experimental-backends > /dev/null &
 
 # Theme
 exec --no-startup-id wal -R
@@ -87,11 +102,8 @@ bindsym $mod+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # start rofi (another program launcher but kinda better i guess
-# bindsym $mod+space exec rofi -show drun -theme sidebar -font "Perfect DOS VGA 437 12"
-
-bindsym $mod+space exec rofi -show drun -theme sidebar -show=icons -font "Iosevka Term 11"
-# bindsym $mod+space exec rofi -show drun -show=icons -font "JetBrainsMono Nerd Font Mono Bold 10"
-# bindsym $mod+space exec rofi -show drun -theme sidebar -icon-theme "HighContrast" -show-icons -font "SFMono Nerd Font Mono Bold 10"
+bindsym $mod+space exec rofi -show drun -theme sidebar -icon-theme "HighContrast" -show-icons -font "Iosevka Term Bold 11"
+# bindsym $mod+space exec rofi -show drun -theme sidebar -font "VictorMono Nerd Font Bold 11"
 
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
@@ -133,7 +145,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+c split h
+# bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -196,7 +208,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -307,8 +319,8 @@ bindsym $mod+r mode "resize"
 # Run i3-gaps instead of i3 by default
 # i3-gaps will have black bar on top if you have description borders
 
-for_window [class=".*"] border pixel 0 
-gaps inner 6 
+for_window [class=".*"] border pixel 1 
+gaps inner 4
 
 smart_gaps on
 smart_gaps inverse_outer
@@ -341,12 +353,11 @@ for_window [class="Spotify"] move to workspace $ws4
 for_window [class="polychromatic"] move to workspace $ws4
 # steam
 for_window [class="steam"] move to workspace $ws4
-# spotify-tui
-bindsym $mod+Shift+t exec i3-sensible-terminal -e spt
+# bindsym $mod+Shift+t exec i3-sensible-terminal -e spt
 # pavucontrol (Volume Control)
-bindsym $mod+Shift+p exec i3-sensible-terminal -e pavucontrol 
+# bindsym $mod+Shift+p exec i3-sensible-terminal -e nohup pavucontrol >> /dev/null & 
 # flameshot
-bindsym $mod+Shift+s exec i3-sensible-terminal -e flameshot gui >> /dev/null
+bindsym $mod+Shift+s exec i3-sensible-terminal -e nohup flameshot gui >> /dev/null &
 # Print screen focused window
 bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/'
 
@@ -369,6 +380,7 @@ bindsym $mod+x mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources for some reason.
+
 set_from_resource $fg i3wm.color2 #f0f0f0
 set_from_resource $bg i3wm.color10 #f0f0f0
 
@@ -382,7 +394,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # PROTIP: You can also dynamically set dmenu's colors this way:
-bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+# bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
 
 # archlinux theme for i3 by okraits
 # http://okraits.de

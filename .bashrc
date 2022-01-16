@@ -103,7 +103,7 @@ fi
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-alias clock='tty-clock'
+alias clock='tty-clock -B -s'
 alias sound='cava'
 alias v='nvim'
 alias vc='v .config/nvim'
@@ -116,6 +116,8 @@ alias m='mysql -u root -p'
 alias par='php artisan'
 alias b='brightnessctl -d "intel_backlight" set'
 alias install='sudo pacman -S'
+alias aurinstall='yay -S'
+alias auruninstall='yay -Rs'
 alias updatesystem='sudo pacman -Syyu'
 alias uninstall='sudo pacman -R'
 alias fulluninstall='sudo pacman -Rs'

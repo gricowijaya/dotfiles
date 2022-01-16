@@ -1,0 +1,53 @@
+# Cheatsheet for ffmpeg
+
+Cheatsheet just for ffmpeg command and how to list
+
+## See audio interface using 
+
+    pactl list sources 
+
+## See audio interface shorter 
+
+    pactl list short sources
+
+## See cam interface
+
+    xrandr
+
+Note: The :0.0+0,0 is the coordinate from xrandr if you using multiple monitor the coordinate such as :0.0+1920,0 using xrandr to see the coordinate
+
+## Full Screen with microphone & screen audio (one monitor)
+    
+    ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0+0,0 -f pulse -ac 2 -ar 48000 -i alsa_output.pci-0000_00_1b.0.analog-stereo.monitor -f pulse -ac 2 -ar 48000 -i alsa_input.pci-0000_00_1b.0.analog-stereo -filter_complex amix=inputs=2 /home/gricowijaya/Videos/output.mkv
+
+## Full Screen with microphone & screen audio (one monitor)
+    
+    ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0+0,0 -f pulse -ac 2 -ar 48000 -i alsa_output.pci-0000_00_1b.0.analog-stereo.monitor -f pulse -ac 2 -ar 48000 -i alsa_input.pci-0000_00_1b.0.analog-stereo -filter_complex amix=inputs=2 /home/gricowijaya/Videos/output.mkv
+
+## Full Screen with microphone no screen audio (one monitor)
+
+    ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0+0,0 -f pulse -ac 2 -ar 48000 -i alsa_input.pci-0000_00_1b.0.analog-stereo /home/gricowijaya/Videos/output.mkv
+
+## Full Screen with no microphone with screen audio (one monitor)
+    ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0+0,0 -f pulse -ac 2 -ar 48000 -i alsa_output.pci-0000_00_1b.0.analog-stereo.monitor /home/gricowijaya/Videos/output.mkv
+
+## Editing with ffmpeg using scripts  
+1. watch the video, take a note in the video the time you want it to be cut then cut the video
+    such as "cut at <your_video> 00:14:00"
+2. then cut it using this command
+
+    ffmpeg -i <your_video> -ss time:time:time -to time:time:time -c copy <output>
+
+    example :
+    ffmpeg -i adding_feature_auto_calculate.mkv -ss 00:42:19 -to 00:45:45 -c copy coding_with_music.mkv
+
+2. then make a text file, after make the text file use it to list the file with the same encodig
+   such as yourfile.txt
+    
+    file '<your_video>'
+    file '<outputfile>'
+    
+3. then run this command 
+
+    ffmpeg -f concat -i <yourfile.txt> -c copy <outputfile.mkv or whatever>
+
