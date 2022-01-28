@@ -8,6 +8,8 @@ This configuration is including the i3, nvim, picom, ranger, polybar
 
 There's two neovim configuration, using lua and vimscript.
 
+use calcurse to manage your time.
+
 ## Dependency
 
 - wal
