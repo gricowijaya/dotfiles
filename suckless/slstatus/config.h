@@ -65,17 +65,18 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ uptime,            " up %s |",               "" },
-	{ wifi_essid,        " wlp2s0 %s ",       "wlp2s0" },
+	{ uptime,            "  %s |",                   "" },
+	{ wifi_essid,        "  %s ",               "wlp2s0" },
 	// { wifi_perc,         " %s% ",             "wlp2s0" },
-	{ netspeed_rx,       " down %s/s ",         "wlp2s0" },
-	{ netspeed_tx,       " up %s/s | ",           "wlp2s0" },
+	{ netspeed_rx,       "  %s/s ",             "wlp2s0" },
+	{ netspeed_tx,       "  %s/s | ",           "wlp2s0" },
 	// { ipv4,              " %s |",             "wlp2s0" },
-	{ disk_free,         " / %sB |",               "/" },
-	{ ram_free,          " ram %sB |",              "" },
-	{ cpu_perc,          " cpu %s% |",              "" },
-	// { temp,              " %s |",           "/sys/class/sensor/thermal" },
-	{ battery_state,     " BAT0 %s -",          "BAT0" },
-	{ battery_remaining, " %s |",               "BAT0" },
-	{ datetime,          " %s",                "%F %T" },
+	{ disk_free,         "  %sB |",                  "/" },
+	{ ram_free,          " ram %sB |",                 "" },
+	{ cpu_perc,          " cpu %s% |",                 "" },
+	// { temp,              " %s |",    "/sys/class/sensor/thermal" },
+	{ battery_state,     "  %s ",             "BAT0" },
+	{ battery_remaining, " %s |",                  "BAT0" },
+	{ datetime,          " %s ",               "%a %F %T" },
 };
+
