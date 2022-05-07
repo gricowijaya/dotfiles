@@ -18,9 +18,9 @@ try
   " In your init.lua or init.vim
   set termguicolors
 
-colorscheme github_dark_default
+colorscheme github_dark
 catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
+  colorscheme wal
   set background=dark
 endtry
 ]]

@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/gricowijaya/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/gricowijaya/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/gricowijaya/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/gricowijaya/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/gricowijaya/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+local package_path_str = "/home/gricowijaya/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/gricowijaya/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/gricowijaya/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/gricowijaya/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/gricowijaya/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -93,11 +93,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
-  },
-  ["calendar-vim"] = {
-    loaded = true,
-    path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/calendar-vim",
-    url = "https://github.com/renerocksai/calendar-vim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -184,6 +179,12 @@ _G.packer_plugins = {
     path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-transparent"] = {
+    config = { "\27LJ\2\2ñ\1\0\0\3\0\a\0\v6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0005\2\4\0=\2\5\0014\2\0\0=\2\6\1B\0\2\1K\0\1\0\fexclude\17extra_groups\1\a\0\0\23BufferLineTabClose\29BufferlineBufferSelected\19BufferLineFill\25BufferLineBackground\24BufferLineSeparator BufferLineIndicatorSelected\1\0\1\venable\2\nsetup\16transparent\frequire\0" },
+    loaded = true,
+    path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -219,15 +220,15 @@ _G.packer_plugins = {
     path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["presence.nvim"] = {
+    loaded = true,
+    path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/presence.nvim",
+    url = "https://github.com/andweeb/presence.nvim"
+  },
   ["project.nvim"] = {
     loaded = true,
     path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
-  },
-  ["telekasten.nvim"] = {
-    loaded = true,
-    path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/telekasten.nvim",
-    url = "https://github.com/renerocksai/telekasten.nvim"
   },
   ["telescope-media-files.nvim"] = {
     loaded = true,
@@ -240,7 +241,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tex.nvim"] = {
-    config = { "\27LJ\1\2W\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\2\vengine\rpdflatex\vviewer\fzathura\nsetup\btex\frequire\0" },
+    config = { "\27LJ\2\2W\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\2\vengine\rpdflatex\vviewer\fzathura\nsetup\btex\frequire\0" },
     loaded = true,
     path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/tex.nvim",
     url = "https://github.com/aspeddro/tex.nvim"
@@ -255,11 +256,6 @@ _G.packer_plugins = {
     path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
-  ["vim-markdown-toc"] = {
-    loaded = true,
-    path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/vim-markdown-toc",
-    url = "https://github.com/mzlogin/vim-markdown-toc"
-  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/gricowijaya/.local/share/nvim/site/pack/packer/start/which-key.nvim",
@@ -268,14 +264,19 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-transparent
+time([[Config for nvim-transparent]], true)
+try_loadstring("\27LJ\2\2ñ\1\0\0\3\0\a\0\v6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0005\2\4\0=\2\5\0014\2\0\0=\2\6\1B\0\2\1K\0\1\0\fexclude\17extra_groups\1\a\0\0\23BufferLineTabClose\29BufferlineBufferSelected\19BufferLineFill\25BufferLineBackground\24BufferLineSeparator BufferLineIndicatorSelected\1\0\1\venable\2\nsetup\16transparent\frequire\0", "config", "nvim-transparent")
+time([[Config for nvim-transparent]], false)
 -- Config for: tex.nvim
 time([[Config for tex.nvim]], true)
-try_loadstring("\27LJ\1\2W\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\2\vengine\rpdflatex\vviewer\fzathura\nsetup\btex\frequire\0", "config", "tex.nvim")
+try_loadstring("\27LJ\2\2W\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\2\vengine\rpdflatex\vviewer\fzathura\nsetup\btex\frequire\0", "config", "tex.nvim")
 time([[Config for tex.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

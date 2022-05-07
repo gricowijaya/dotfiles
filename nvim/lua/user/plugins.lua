@@ -110,6 +110,27 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
+  use {
+    'xiyaowong/nvim-transparent',
+    config = function()
+    require("transparent").setup({
+      enable = true, -- boolean: enable transparent
+      extra_groups = { -- table/string: additional groups that should be clear
+        -- In particular, when you set it to 'all', that means all avaliable groups
+
+        -- example of akinsho/nvim-bufferline.lua
+        "BufferLineTabClose",
+        "BufferlineBufferSelected",
+        "BufferLineFill",
+        "BufferLineBackground",
+        "BufferLineSeparator",
+        "BufferLineIndicatorSelected",
+      },
+      exclude = {}, -- table: groups you don't want to clear
+    })
+    end
+  }
+
   -- LaTeX
   use {
     'aspeddro/tex.nvim',
@@ -120,15 +141,8 @@ return packer.startup(function(use)
       }
     end
   }
-
-  -- Markdown
-  use {
-    'renerocksai/telekasten.nvim',
-    'renerocksai/calendar-vim',
-    'mzlogin/vim-markdown-toc',
-    config = function()
-    end
-  }
+  
+  use 'andweeb/presence.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

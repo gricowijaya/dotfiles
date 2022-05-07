@@ -5,21 +5,36 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
-	[[                               __                ]],
-	[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-	[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-	[[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-	[[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-	[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+  [[                                                    ]],
+  [[                                                    ]],
+  [[                                                    ]],
+  [[                                                    ]],
+  [[                  NVIM v0.8.0-dev                   ]],
+  [[                                                    ]],
+  [[    Nvim is open source and freely distributable    ]],
+  [[              https://neovim.io/#chat               ]],
+	-- [[                               __                ]],
+	-- [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+	-- [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+	-- [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+	-- [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+	-- [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 }
 dashboard.section.buttons.val = {
-	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
-	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
-	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+	-- dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+	-- dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+	-- dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
+	-- dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
+	-- dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
+	-- dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
+	-- dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+	dashboard.button("f", "1.  Find file", ":Telescope find_files <CR>"),
+	dashboard.button("e", "2.  New file", ":ene <BAR> startinsert <CR>"),
+	dashboard.button("p", "3.  Find project", ":Telescope projects <CR>"),
+	dashboard.button("r", "4.  Recently used files", ":Telescope oldfiles <CR>"),
+	dashboard.button("t", "5.  Find text", ":Telescope live_grep <CR>"),
+	dashboard.button("c", "6.  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
+	dashboard.button("q", "7.  Quit Neovim", ":qa<CR>"),
 }
 
 local function footer()
@@ -29,7 +44,7 @@ local function footer()
 	-- handle:close()
 	-- return fortune
 	-- return "chrisatmachine.com"
-	return "gricowijaya@terminal"
+	return "Code ?"
 end
 
 dashboard.section.footer.val = footer()
